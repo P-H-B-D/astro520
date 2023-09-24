@@ -3,7 +3,6 @@
 int main() {
     FILE *file;
     int int_number; // For reading an integer
-    float float_number; // For storing the integer as a float
 
     file = fopen("numbers.bin", "rb");  // Open the file for reading in binary mode
     if (file == NULL) {
