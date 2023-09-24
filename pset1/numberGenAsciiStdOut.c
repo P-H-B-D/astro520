@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 int main() {
     srand(time(0));  // Initialize random number generator.
 
-    int number = 1000; // Ten million
-    // int number = 1000000000; // Uncomment to actually print one billion numbers
-
+    // int number = 1000000000; // One billion
+    // Commented out for example, uncomment to actually print one billion numbers
+    int number = 1000; 
 
     for (int i = 0; i < number; ++i) {
         int random_num = rand() % 10;  // Generate random number between 0 and 9
-        fwrite(&random_num, sizeof(int), 1, stdout);  // Write each integer to stdout in binary form
+        fprintf(stdout, "%d\n", random_num);  // Write each integer followed by a new line to stdout
     }
+
 
     return 0;
 }
