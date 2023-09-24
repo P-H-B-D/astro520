@@ -10,15 +10,15 @@ int main() {
 
     clock_t start_time = clock();  // Record the start time
 
-    file = fopen("numbers.txt", "w");  // Open the file for writing
+    file = fopen("numbers.bin", "wb");  // Open the file for writing in binary mode
     if (file == NULL) {
         printf("Could not open file for writing.\n");
         return 1;
     }
 
     for (int i = 0; i < number; ++i) {
-        int random_num = rand() % 10; // Generate random number between 0 and 9
-        fprintf(file, "%d\n", random_num);  // Write each integer followed by a new line
+        int random_num = rand() % 10 ;
+        fwrite(&random_num, sizeof(int), 1, stdout);  // Write each integer
     }
 
     fclose(file);  // Close the file
@@ -28,7 +28,7 @@ int main() {
     // Calculate the elapsed time in milliseconds
     double elapsed_time_ms = (double)(end_time - start_time) * 1000 / CLOCKS_PER_SEC;
     
-    printf("Numbers generated between 0 and 9. Numbers generated: %i, Elapsed time: %.2f milliseconds\n", number, elapsed_time_ms);
+    printf("Binary Mode (fwrite). Numbers generated: %i, Elapsed time: %.2f milliseconds\n", number, elapsed_time_ms);
 
     return 0;
 }

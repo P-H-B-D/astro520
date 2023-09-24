@@ -17,7 +17,7 @@ int main() {
     }
 
     for (int i = 0; i < number; ++i) {
-        int random_num = rand();
+        int random_num = rand() % 10 ;
         fwrite(&random_num, sizeof(int), 1, file);  // Write each integer
     }
 

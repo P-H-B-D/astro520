@@ -12,16 +12,18 @@ int main() {
     }
 
     // Initialize variables for the running average
-    float avg = 0;
-    float count = 0;
+    float runningSum=0;
+    int count=0;
 
     while (fread(&int_number, sizeof(int), 1, file) == 1) {
         // Update running average
-        avg = (avg * count + int_number) / (count + 1);
+        runningSum = runningSum + (float)int_number;
         count++;
 
-        printf("%f\n", avg);  // Print the running average
+        printf("%f\n", runningSum);  // Print the running average
     }
+    printf("Count: %d\n", count);  // Print the running average
+    printf("Average: %f\n", runningSum/count);  // Print the running average
 
     fclose(file);  // Close the file
     return 0;
