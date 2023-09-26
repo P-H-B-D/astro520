@@ -7,7 +7,12 @@
     See: numberGenASCII.c 
     Runtime = 75sec, file size = 10.1GB
 
-1.2: Once by copying the binary representation of each number to the file (using fprintf subroutine). `TODO.c`
+1.2: Once by copying the binary representation of each number to the file (using fprintf subroutine). 
+    
+    See: numberGenBinaryFprintf.c 
+    Runtime: 157475.10 milliseconds, file size = 33.0GB
+
+This low degree of performance can be seen as essentially the 'worst of both worlds': a lack of easily human readable text, encoded in a format that is built for human-readability rather than compression efficiency. 
 
 1.3: Once by dumping the entire array in shot using a low level “write” subroutine
     
@@ -39,4 +44,17 @@ Average: 4.421000`.
 
 #### 3: Last step. Let’s learn how to make a fast histogram using the algorithm discussed in class. Write a program to “bin up” your numbers by tenths, and print out/write to a file the number of random numbers generated that had values between 0 and 0.1, between 0.1 and 0.2, between 0.2 and 0.3, etc. [So your billion number file effectively gets turned into a ten number file.] Make a bar plot (histogram) showing the number of values found in each interval (“bin”).
 
-TODO.
+See programs `numberGenBinary.c`, `bins.c`, and `plotHist.py`, as well as figure `figure.png`, and the following results after n=1e9:
+
+Counts (RNG integers in set [0,9]):
+
+    0: 99996690
+    1: 99997760
+    2: 99984541
+    3: 99995878
+    4: 100012593
+    5: 100006873
+    6: 100002599
+    7: 100001422
+    8: 99999166
+    9: 100002478

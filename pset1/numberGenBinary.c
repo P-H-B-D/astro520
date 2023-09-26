@@ -6,7 +6,7 @@ int main() {
     FILE *file;
     srand(time(0));  // Initialize random number generator.
     
-    int number = 1000; // One billion
+    int number = 1000000000; //1e9
 
     clock_t start_time = clock();  // Record the start time
 

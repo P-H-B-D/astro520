@@ -7,7 +7,7 @@ int main() {
 
     // int number = 1000000000; // One billion
     // Commented out for example, uncomment to actually print one billion numbers
-    int number = 1000; 
+    int number = 1000000000; 
 
     for (int i = 0; i < number; ++i) {
         int random_num = rand() % 10;  // Generate random number between 0 and 9
