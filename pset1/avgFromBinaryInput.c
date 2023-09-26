@@ -1,9 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int int_number;  // For reading an integer
-
-    // Initialize variables for the running average
+    int int_number;  
     float runningSum = 0;
     int count = 0;
 
@@ -14,18 +12,14 @@ int main() {
         if (readSize != 1) {  // Check if end-of-file or error occurred
             if (feof(stdin)) {  // End-of-file
                 break;
-            } else {  // Error
+            } else {  
                 printf("An error occurred while reading.\n");
                 return 1;
             }
         }
-
-        // Update running average
         runningSum += (float)int_number;
         count++;
-
-        // printf("Running Sum: %f\n", runningSum);  // Print the running sum
-        printf("Average: %f\n", runningSum / count);  // Print the running average
+        printf("Average: %f\n", runningSum / count);
     }
 
     if (count == 0) {
@@ -33,8 +27,8 @@ int main() {
         return 0;
     }
 
-    printf("Count: %d\n", count);  // Print the count
-    printf("Average: %f\n", runningSum / count);  // Print the average
+    printf("Count: %d\n", count); 
+    printf("Average: %f\n", runningSum / count);  
 
     return 0;
 }

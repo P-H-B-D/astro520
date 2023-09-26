@@ -25,7 +25,6 @@ int main() {
 
     clock_t end_time = clock();  // Record the end time
 
-    // Calculate the elapsed time in milliseconds
     double elapsed_time_ms = (double)(end_time - start_time) * 1000 / CLOCKS_PER_SEC;
     
     printf("Binary Mode (fwrite). Numbers generated: %i, Elapsed time: %.2f milliseconds\n", number, elapsed_time_ms);
